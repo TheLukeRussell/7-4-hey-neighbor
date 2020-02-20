@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3>{{ tool.tool }}</h3>
+<div class="row no-gutters">
+<h3 class="col">{{ tool.tool }}</h3>
+</div>
 <div id='detail-row' class="row no-gutters">
     <div id='detail-item' class="col">Tool Type: <strong>{{ tool.type }}</strong></div>
 </div>
