@@ -2,6 +2,11 @@
 
 {% block content %}
 <h1>What's Poppin' Neighbor?!</h1>
+
+{% if request.user.username %} 
+<h3 id="greeting">Welcome Back {{request.user.username}}!</h3> 
+{% endif %}
+
 {% for tools in object_list %}
 <p>
     <a href="{% url 'tools:detail' tools.id %}">{{tools.tool}}</a>

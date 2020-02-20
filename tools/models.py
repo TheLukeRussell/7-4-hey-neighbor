@@ -8,11 +8,11 @@ User = get_user_model()
 class Tool(models.Model):
 
     TYPES = [
-        ('AUTO', 'Auto'),
-        ('PLUMBING', 'Plumbing'),
-        ('BIKE', 'Bike'),
-        ('YARD', 'Yard'),
-        ('WOODWORKING', 'Woodworking'),
+        ('Automobile', 'Auto'),
+        ('Plumbing', 'Plumbing'),
+        ('Bike', 'Bike'),
+        ('Yard', 'Yard'),
+        ('Woodworking', 'Woodworking'),
     ]
     BOOL = [
     (True, 'Yes'),

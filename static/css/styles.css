@@ -18,3 +18,7 @@ h1 {
     text-decoration: none;
     color: #fff;
 }
+
+#greeting {
+    text-align: center;
+}
