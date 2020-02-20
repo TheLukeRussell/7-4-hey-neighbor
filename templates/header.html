@@ -2,6 +2,13 @@
     <li id="header-item"><a href="{% url 'tools:index' %}" class="col">Home</a></li>
     <li id="header-item"><a href="" class="col">My Tools</a></li>
     <li id="header-item"><a href="" class="col">Neighbors</a></li>
+    {% if request.user.is_authenticated %}
+    <li id="header-item"><a href="{% url 'logout' %}" class="col">Logout</a></li> 
+    {% else %}
+    <li id="header-item"><a href="{% url 'login' %}" class="col">Login</a></li> 
     <li id="header-item"><a href="{% url 'accounts:signup' %}" class="col">Get Started</a></li>
-    <li id="header-item"><a href="" class="col">Login</a></li>
+    {% endif %}
+    {% if request.user.is_superuser %} 
+    <li id="header-item"><a href="{% url 'tools:create' %}" class="col">Add Tool</a></li>
+    {% endif %}
 </ul>
