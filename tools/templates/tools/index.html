@@ -8,7 +8,7 @@
 {% endif %}
 <div class="row no-gutters">
 {% for tools in object_list %}
-    <a id='tool' class="col-md-4 btn btn-dark" href="{% url 'tools:detail' tools.id %}">{{tools.tool}}</a>
+    <a id='tool' class="col-md-5 btn btn-dark" href="{% url 'tools:detail' tools.id %}">{{tools.tool}}</a>
 {% endfor %}
 </div>
 {% endblock content %}

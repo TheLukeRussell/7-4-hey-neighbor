@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Neighbors</h2>
+    {% for owner in neighbors_list %}
+    <ul class="row no-gutters">
+        <li class='col' id="neighbor">{{owner.username}}</li>
+    </ul>
+    {% endfor %}
+{% endblock content %}

@@ -17,4 +17,4 @@ def login_request(request):
     form = AuthenticationForm()
     def get_success_url(self):
         return reverse_lazy('tools:index')
-        
+
