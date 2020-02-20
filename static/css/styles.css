@@ -10,6 +10,17 @@ h1 {
     background-color: #000;
 }
 
+.container {
+    padding: 0;
+    background-color: #ffffffcb;
+    min-height: 100vh;
+}
+
+body {
+    background-color: #000000;
+    background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
+}
+
 #header-item {
     margin: 0 auto;
 }
