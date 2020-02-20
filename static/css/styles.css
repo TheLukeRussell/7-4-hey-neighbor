@@ -1,4 +1,20 @@
 h1 {
     font-size: 60px;
     color: black;
+    text-align: center;
+}
+
+#header {
+    list-style: none;
+    text-align: center;
+    background-color: #000;
+}
+
+#header-item {
+    margin: 0 auto;
+}
+
+#header-item a {
+    text-decoration: none;
+    color: #fff;
 }
