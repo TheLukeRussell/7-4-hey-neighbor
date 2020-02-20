@@ -6,10 +6,9 @@
 {% if request.user.username %} 
 <h3 id="greeting">Welcome Back {{request.user.username}}!</h3> 
 {% endif %}
-
+<div class="row no-gutters">
 {% for tools in object_list %}
-<p>
-    <a href="{% url 'tools:detail' tools.id %}">{{tools.tool}}</a>
-</p>
+    <a id='tool' class="col-md-4 btn btn-dark" href="{% url 'tools:detail' tools.id %}">{{tools.tool}}</a>
 {% endfor %}
+</div>
 {% endblock content %}

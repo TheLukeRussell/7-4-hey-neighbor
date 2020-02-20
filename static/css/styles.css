@@ -1,24 +1,25 @@
 h1 {
     font-size: 60px;
-    color: black;
+    color: #000;
     text-align: center;
 }
 
 #header {
     list-style: none;
     text-align: center;
-    background-color: #000;
+    background-color: #76323F;
+    padding: 20px;
 }
 
 .container {
     padding: 0;
-    background-color: #ffffffcb;
+    background-color: #D7CDC7;
     min-height: 100vh;
 }
 
 body {
-    background-color: #000000;
-    background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
+    background-color: #565656;
+    /* background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png"); */
 }
 
 #header-item {
@@ -32,4 +33,17 @@ body {
 
 #greeting {
     text-align: center;
+}
+
+#tool {
+    text-align: center;
+    margin: 10px auto;
+}
+
+.btn-dark {
+    background-color: #76323F;
+}
+
+.btn-dark:hover {
+    background-color: #a14457
 }
