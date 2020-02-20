@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>{{ tool.tool }}</h3>
+<div id='detail-row' class="row no-gutters">
+    <div id='detail-item' class="col">Tool Type: <strong>{{ tool.type }}</strong></div>
+</div>
+<div id='detail-row' class="row no-gutters">
+    <div id='detail-item' class="col">Posted on: <strong>{{ tool.posted }}</strong></div>
+</div>
+<div id='detail-row' class="row no-gutters">
+    <div id='detail-item' class="col">Available: <strong>{{ tool.available }}</strong></div>
+</div>
+<div id='detail-row'class="row no-gutters">
+    <div id='detail-item' class="col">Owner: <strong>{{ tool.owner }}</strong></div>
+</div>
+{% endblock content %}

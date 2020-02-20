@@ -1,12 +1,32 @@
 from django.db import models
 from django.urls import reverse
+import datetime
+from django.contrib.auth import get_user_model
 
+User = get_user_model()
 
-class Tools(models.Model):
-    type = models.CharField(max_length = 30)
+class Tool(models.Model):
+
+    TYPES = [
+        ('AUTO', 'Auto'),
+        ('PLUMBING', 'Plumbing'),
+        ('BIKE', 'Bike'),
+        ('YARD', 'Yard'),
+        ('WOODWORKING', 'Woodworking'),
+    ]
+    BOOL = [
+    (True, 'Yes'),
+    (False, 'No')
+]   
+
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    tool = models.CharField(max_length = 50, default = '')
+    type = models.CharField(max_length = 30, choices=TYPES, default='AUTO')
+    posted = models.DateField(default=datetime.date.today)
+    available = models.BooleanField(choices=BOOL)
 
     def __str__(self):
-        return self.type
+        return self.tool
 
     def get_absolute_url(self):
         return reverse('tools:index')

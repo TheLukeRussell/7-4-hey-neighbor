@@ -2,4 +2,9 @@
 
 {% block content %}
 <h1>What's Poppin' Neighbor?!</h1>
+{% for tools in object_list %}
+<p>
+    <a href="{% url 'tools:detail' tools.id %}">{{tools.tool}}</a>
+</p>
+{% endfor %}
 {% endblock content %}
