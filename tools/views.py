@@ -1,7 +1,8 @@
 from django.views import generic
 from django.conf import settings
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth import get_user_model
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 
 from .models import Tool
@@ -15,14 +16,31 @@ class IndexView(generic.ListView):
     template_name = 'tools/index.html'
     model = Tool
 
-class CreateView(generic.CreateView):
+class CreateView(LoginRequiredMixin, generic.CreateView):
     template_name = 'tools/create.html'
     model = Tool
-    fields = '__all__'
+    fields = ['tool', 'type', 'available']
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
+    def handle_no_permission(self):
+        return redirect('login')
 
 class DetailView(generic.DetailView):
     template_name = 'tools/detail.html'
     model = Tool
+
+class EditView(LoginRequiredMixin, generic.UpdateView):
+    template_name = 'tools/edit.html'
+    model = Tool
+    fields = ['tool', 'type', 'available']
+
+class DeleteView(LoginRequiredMixin, generic.DeleteView):
+    template_name = 'tools/delete.html'
+    model = Tool
+    success_url = reverse_lazy('tools/index.html')
+    def get_success_url(self):
+        return reverse_lazy('tools:index')
 
 class MyToolView(generic.ListView):
     template_name = 'tools/my_tools.html'

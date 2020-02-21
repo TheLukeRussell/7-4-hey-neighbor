@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row no-gutters">
+    <div class="col">
+        <h2>Delete Tool</h2>
+    </div>
+</div>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary">Submit</button>
+</form>
+{% endblock content %}

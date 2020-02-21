@@ -1,14 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>What's Poppin' Neighbor?!</h1>
-
-{% if request.user.username %} 
-<h3 id="greeting">Welcome Back {{request.user.username}}!</h3> 
+<h1>Hey Neighbor</h1>
+{% if request.user.is_authenticated %}
+{% if request.user.username %}
+<h5 id="greeting">Welcome Back {{request.user.username}}!</h5>
 {% endif %}
 <div class="row no-gutters">
-{% for tools in object_list %}
-    <a id='tool' class="col-md-5 btn btn-dark" href="{% url 'tools:detail' tools.id %}">{{tools.tool}}</a>
-{% endfor %}
+    <p style='text-align: center;'class="col-md"><b>Select a tool below to learn more about it</b></p>
 </div>
+<div class="row no-gutters">
+    {% for tools in object_list %}
+    <a id='tool' class="col-md-5 btn btn-dark" href="{% url 'tools:detail' tools.id %}">{{tools.tool}}</a>
+    {% endfor %}
+</div>
+{% else %}
+<h3 class="mt-5 mb-5">Hey Neighbor! is a revolutionary community app that connects people in your neighborhood in order to share tools
+    with one another!</h3>
+    <h4>To Login or Signup, click the respective link below</h4>
+    <div class="row no-gutters">
+    <a href="{% url 'login' %}" id="home-btn" class="col-4 btn btn-dark">Login</a>
+    <a href="{% url 'accounts:signup' %}" id="home-btn" class="col-4 btn btn-dark">Signup</a>
+    </div>
+{% endif %}
 {% endblock content %}
