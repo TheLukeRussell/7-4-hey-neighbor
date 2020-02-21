@@ -12,5 +12,6 @@ urlpatterns = [
     path('my_tools', views.MyToolView.as_view(), name = 'my_tools'),
     path('<int:pk>/edit', views.EditView.as_view(), name = 'edit'),
     path('<int:pk>/delete', views.DeleteView.as_view(), name = 'delete'),
+    path('<int:pk>/borrow', views.BorrowView.as_view(), name = 'borrow'),
 
 ]

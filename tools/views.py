@@ -35,6 +35,14 @@ class EditView(LoginRequiredMixin, generic.UpdateView):
     model = Tool
     fields = ['tool', 'type', 'available']
 
+class BorrowView(LoginRequiredMixin, generic.UpdateView):
+    template_name = 'tools/borrow.html'
+    model = Tool
+    fields = ['available']
+    success_url = reverse_lazy('tools/index.html')
+    def get_success_url(self):
+        return reverse_lazy('tools:index')
+
 class DeleteView(LoginRequiredMixin, generic.DeleteView):
     template_name = 'tools/delete.html'
     model = Tool
