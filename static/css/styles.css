@@ -152,12 +152,13 @@ h5 {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #565656;
+    background-color: #76323F;
     /* margin: 1.5%; */
 }
 
 .contain:hover .overlay {
-    opacity: .75;
+    opacity: .8;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"); ;
 }
 
 .text {

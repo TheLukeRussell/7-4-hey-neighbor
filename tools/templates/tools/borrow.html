@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Borrow Item</h2>
-    <ul class="row no-gutters">
-        <li class='col' id="neighbor">{{owner.username}}</li>
-    </ul>
+<div class="row no-gutters">
+    <div class="col">
+        <h2>Borrow Tool</h2>
+    </div>
+</div>
+<form style="text-align: center; font-size: 24px;" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary">Submit</button>
+</form>
 {% endblock content %}

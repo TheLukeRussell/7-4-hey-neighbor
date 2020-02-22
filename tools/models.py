@@ -23,7 +23,8 @@ class Tool(models.Model):
     tool = models.CharField(max_length = 50, default = '')
     type = models.CharField(max_length = 30, choices=TYPES, default='AUTO')
     posted = models.DateField(default=datetime.date.today)
-    available = models.BooleanField(choices=BOOL)
+    available = models.BooleanField(choices=BOOL, default=True)
+    Are_You_Sure = models.BooleanField(choices=BOOL, default=False)
     picture = models.ImageField(upload_to='images/')
 
     def __str__(self):

@@ -9,18 +9,15 @@
 <div id='detail-row' class="row no-gutters">
     <div id='detail-item' class="col">Posted on: <strong>{{ tool.posted }}</strong></div>
 </div>
-<div id='detail-row' class="row no-gutters">
-    <div id='detail-item' class="col">Available: <strong>{{ tool.available }}</strong></div>
-</div>
 <div id='detail-row'class="row no-gutters">
     <div id='detail-item' class="col">Owner: <strong>{{ tool.owner }}</strong></div>
 </div>
 
-{% if object.available == True %}
+{% if object.Are_You_Sure == False %}
 <div class="row no-gutters justify-content-center">
-<a href="#" class="col-3 btn btn-dark">Borrow Now</a>
+<a href="{% url 'tools:borrow' tool.id%}" class="col-3 btn btn-dark">Borrow Now</a>
 {% else %}
-<p>This item is unavailable</p>
+<p style="text-align: center; font-weight: bold;">This item is unavailable</p>
 {% endif %}
 </div>
 {% endblock content %}

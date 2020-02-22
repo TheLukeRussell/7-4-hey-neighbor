@@ -11,7 +11,7 @@ class SignUpView(generic.CreateView):
 def logout_request(request):
     logout(request)
     messages.info(request, "Logged out successfully!")
-    return redirect("main:homepage")
+    return redirect("tools:index")
 
 def login_request(request):
     form = AuthenticationForm()
