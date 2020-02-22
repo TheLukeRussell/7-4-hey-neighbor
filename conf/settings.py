@@ -41,7 +41,6 @@ INSTALLED_APPS = [
 
     'accounts.apps.AccountsConfig',
     'tools.apps.ToolsConfig',
-    'crispy_forms',
 ]
 
 MEDIA_URL = '/media/'
