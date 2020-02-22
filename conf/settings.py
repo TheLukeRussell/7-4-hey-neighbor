@@ -41,7 +41,13 @@ INSTALLED_APPS = [
 
     'accounts.apps.AccountsConfig',
     'tools.apps.ToolsConfig',
+    'crispy_forms',
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CRISPY_TEMPLATE_PACK = 'uni_form',
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

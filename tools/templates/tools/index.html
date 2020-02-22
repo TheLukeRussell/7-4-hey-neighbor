@@ -9,13 +9,18 @@
 <div class="row no-gutters">
     <p style='text-align: center;'class="col-md"><b>Select a tool below to learn more about it</b></p>
 </div>
-<div class="row no-gutters">
     {% for tools in object_list %}
-    <a id='tool' class="col-md-5 btn btn-dark" href="{% url 'tools:detail' tools.id %}">{{tools.tool}}</a>
+    <div class="contain">
+    <div class="row no-gutters mb-5">
+    <a id='tool' class="col-md" href="{% url 'tools:detail' tools.id %}"><img id='tool-picture' src="{{ tools.picture.url }}" alt="{{ tools.tool }}"><div class="overlay">
+        <div class="text">{{ tools.tool }}</div>
+    </div></a>
+    </div>
+    </div>
     {% endfor %}
 </div>
 {% else %}
-<h3 class="mt-5 mb-5">Hey Neighbor! is a revolutionary app that connects people in your neighborhood in order to share tools
+<h3 class="m-5">Hey Neighbor! is a revolutionary app that connects people in your neighborhood in order to share tools
     with one another!</h3>
     <h4>To Login or Signup, click the respective link below</h4>
     <div class="row no-gutters">

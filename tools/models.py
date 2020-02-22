@@ -24,6 +24,7 @@ class Tool(models.Model):
     type = models.CharField(max_length = 30, choices=TYPES, default='AUTO')
     posted = models.DateField(default=datetime.date.today)
     available = models.BooleanField(choices=BOOL)
+    picture = models.ImageField(upload_to='images/')
 
     def __str__(self):
         return self.tool

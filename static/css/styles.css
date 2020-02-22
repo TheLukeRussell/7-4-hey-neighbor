@@ -17,10 +17,8 @@ h1 {
     text-align: center;
     background-color: #000;
     padding: 10px;
-    margin: auto;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    margin-top: auto;
+    margin-bottom: 0;
 }
 
 .container {
@@ -30,7 +28,6 @@ h1 {
     min-height: 110vh;
     display: flex;
     flex-direction: column;
-    position: relative;
 }
 
 body {
@@ -129,4 +126,46 @@ h5 {
 
 #home-btn {
     margin: 50px auto;
+}
+
+#tool-picture {
+    height: 400px;
+    width:500px;
+    margin: 0 auto;
+}
+
+.contain {
+    height: 400px;
+    width: 500px;
+    position: relative;
+    display: inline-block;
+    margin: 50px auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #565656;
+    /* margin: 1.5%; */
+}
+
+.contain:hover .overlay {
+    opacity: .75;
+}
+
+.text {
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
