@@ -19,7 +19,7 @@ class IndexView(generic.ListView):
 class CreateView(LoginRequiredMixin, generic.CreateView):
     template_name = 'tools/create.html'
     model = Tool
-    fields = ['tool', 'type', 'available']
+    fields = ['tool', 'type', 'available', 'posted', 'picture']
     def form_valid(self, form):
         form.instance.owner = self.request.user
         return super().form_valid(form)
@@ -33,7 +33,7 @@ class DetailView(generic.DetailView):
 class EditView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'tools/edit.html'
     model = Tool
-    fields = ['tool', 'type', 'available']
+    fields = ['tool', 'type', 'available', 'picture']
 
 class BorrowView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'tools/borrow.html'
